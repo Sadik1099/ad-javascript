@@ -20,20 +20,31 @@
     <main>
         <section>
             <h2>Exploring Dom</h2>
-            <article>
+            <article id = "firstArticle" class="special">
                 <h3 title="I am the man" id="mainHtml">article-1</h3>
                 <p  class="author">author-1</p>
                 <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt voluptatum aut voluptas possimus! Iusto ipsum delectus architecto nulla quam earum.</p>
             </article>
-            <article>
+            <article class="special">
                 <h3>article-2</h3>
                 <p class="author">author-2</p>
                 <p class="description">Consequatur, ad suscipit illo neque similique, sunt nobis temporibus obcaecati facilis totam, itaque nulla. Sequi neque modi veniam nobis soluta?</p>
             </article>
-            <article>
+            <article class="special">
                 <h3>article-3</h3>
                 <p class="author">author-3</p>
                 <p class="description">Praesentium non explicabo quis quidem consequuntur repellat ipsam fugit. Harum recusandae repudiandae iste. Obcaecati dolores illum perspiciatis architecto molestiae labore?</p>
+            </article>
+            <article class="special">
+                <h3>Grocery List</h3>
+
+                <ul id="giftItem">
+                    <li>list item-1</li>
+                    <li>list item-2</li>
+                    <li>list item-3</li>
+                    <li>list item-4</li>
+                </ul>
+                
             </article>
         </section>
     </main>
@@ -41,17 +52,28 @@
     <script>
 
        
-             var auhtor = document.getElementsByClassName('author');
+            //  var auhtor = document.getElementsByClassName('author');
              
-             for( let i=0;i<auhtor.length;i++)
-             {
-                let element = auhtor[i];
-                element.setAttribute('title', 'All boss are Dane');
-                console.log(element.innerHTML);
-                element.innerHTML = 'lekhok - '+ (i+1);
-                element.style.backgroundColor = 'yellow'
-                element.style.padding = "20px"
-             }
+            //  for( let i=0;i<auhtor.length;i++)
+            //  {
+            //     let element = auhtor[i];
+            //     element.setAttribute('title', 'All boss are Dane');
+            //     console.log(element.innerHTML);
+            //     element.innerHTML = 'lekhok - '+ (i+1);
+            //     element.style.backgroundColor = 'yellow'
+            //     element.style.padding = "20px"
+            //  }
+
+            var article = document.getElementById('firstArticle');
+            const newparagraph = document.createElement('p');
+            newparagraph.innerHTML= 'This is added by Javascript';
+            article.appendChild(newparagraph);
+
+            const ul = document.getElementById('giftItem');
+            const li = document.createElement('li');
+            li.innerHTML = "list item-5";
+            ul.appendChild(li);
+
 
     </script>
 </body>
